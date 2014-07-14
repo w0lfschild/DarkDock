@@ -16,9 +16,26 @@
 static id (*orig_CFPreferencesCopyAppValue)(CFStringRef key, CFStringRef applicationID);
 
 // Always return @"Dark" whenever @"AppleInterfaceTheme" is requested. @"AppleInterfaceTheme"'s value is stored in /Library/Preferences/.GlobalPreferences.
-id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
+id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID)
+{
     if ([(__bridge NSString *)key isEqualToString:@"AppleInterfaceTheme"] || [(__bridge NSString *)key isEqualToString:@"AppleInterfaceStyle"]) {
-        return @"Dark";
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+        NSString *docDir = [paths objectAtIndex:0];
+        NSString *docFile = [NSString stringWithFormat:@"%@/Application Support/SIMBL/plugins/DarkDock.bundle/Contents/Resources/mode.txt", docDir];
+        NSString *contents = [NSString stringWithContentsOfFile:docFile encoding:NSUTF8StringEncoding error:NULL];
+        NSArray *lines = [contents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+        NSString *res = @"Light";
+        
+        
+        if ([lines count] > 0)
+        {
+            NSInteger val = [lines[0] integerValue];
+            if (val)
+                res = @"Dark";
+        }
+        
+        return res;
     } else {
         return orig_CFPreferencesCopyAppValue(key, applicationID);
     }

@@ -14,6 +14,7 @@
 		663AC3801969BC7E007E3F36 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 663AC37D1969BC7E007E3F36 /* LICENSE */; };
 		663AC3811969BC7E007E3F36 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 663AC37E1969BC7E007E3F36 /* README.md */; };
 		66E134DF1969C3E00093C56B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E134DE1969C3E00093C56B /* Foundation.framework */; };
+		FBB8E1691973B708008AD4EF /* mode.txt in Resources */ = {isa = PBXBuildFile; fileRef = FBB8E1681973B708008AD4EF /* mode.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		663AC37E1969BC7E007E3F36 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		66E134DD1969BECC0093C56B /* README.mdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = SOURCE_ROOT; };
 		66E134DE1969C3E00093C56B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FBB8E1681973B708008AD4EF /* mode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mode.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			children = (
 				66E134DD1969BECC0093C56B /* README.mdown */,
 				663AC3671969BB96007E3F36 /* DarkDock */,
+				FBB8E16519739B82008AD4EF /* Resources */,
 				663AC3641969BB96007E3F36 /* Frameworks */,
 				663AC3631969BB96007E3F36 /* Products */,
 			);
@@ -75,9 +78,9 @@
 		663AC3671969BB96007E3F36 /* DarkDock */ = {
 			isa = PBXGroup;
 			children = (
-				663AC37A1969BC7E007E3F36 /* fishhook */,
 				663AC3731969BBFA007E3F36 /* darkdock.h */,
 				663AC3741969BBFA007E3F36 /* darkdock.m */,
+				663AC37A1969BC7E007E3F36 /* fishhook */,
 				663AC3681969BB96007E3F36 /* Supporting Files */,
 			);
 			path = DarkDock;
@@ -104,6 +107,14 @@
 			name = fishhook;
 			path = Libraries/fishhook;
 			sourceTree = SOURCE_ROOT;
+		};
+		FBB8E16519739B82008AD4EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FBB8E1681973B708008AD4EF /* mode.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -159,6 +170,7 @@
 				663AC3811969BC7E007E3F36 /* README.md in Resources */,
 				663AC3801969BC7E007E3F36 /* LICENSE in Resources */,
 				663AC36C1969BB96007E3F36 /* InfoPlist.strings in Resources */,
+				FBB8E1691973B708008AD4EF /* mode.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -283,7 +295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
